@@ -1,7 +1,7 @@
 from math import *
 
 def isPrime(n):
-    for i in range(2,int(math.sqrt(n))+1):
+    for i in range(2,int(n**.5)+1):
         if n%i==0:
             return False
 
@@ -20,14 +20,17 @@ def factor(x):
     factors.sort()
     print factors
     return factors
-def count_instances(arr)
-    look_up = {}
+def count_instances(arr):
+    look_up = []
     for i in arr:
-        None
+        store = arr.count(i)
+        temp = [i,store]
+        look_up.append(temp)
+        for i in range(store - 1):
+            arr.pop(0)
+    print look_up
         
-def euler5(num):
+"""def euler5(num):
     for i in range(num)
-        x = factor(num)
+        x = factor(num)"""
         
-            
-    
