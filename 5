@@ -1,0 +1,33 @@
+from math import *
+
+def isPrime(n):
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            return False
+
+    return True
+def factor(x):
+    factors = []
+    store = x
+    while store > 1:
+        for i in range(2,x):
+            if store%i == 0 and isPrime(i):
+                factors.append(i)
+                store /= i
+        if store == 1:
+            store = 0
+    factors.append(x)
+    factors.sort()
+    print factors
+    return factors
+def count_instances(arr)
+    look_up = {}
+    for i in arr:
+        None
+        
+def euler5(num):
+    for i in range(num)
+        x = factor(num)
+        
+            
+    
