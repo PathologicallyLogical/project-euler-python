@@ -1,36 +1,37 @@
 from math import *
 
 def isPrime(n):
-    for i in range(2,int(n**.5)+1):
+    for i in range(2,int(n**0.5)+1):
         if n%i==0:
             return False
-
     return True
+
+
 def factor(x):
     factors = []
     store = x
     while store > 1:
         for i in range(2,x):
             if store%i == 0 and isPrime(i):
-                factors.append(i)
-                store /= i
+                if not(i == 1):    
+                    factors.append(i)
+                    store /= i
         if store == 1:
             store = 0
-    factors.append(x)
     factors.sort()
-    print factors
     return factors
-def count_instances(arr):
-    look_up = []
-    for i in arr:
-        store = arr.count(i)
-        temp = [i,store]
-        look_up.append(temp)
-        for i in range(store - 1):
-            arr.pop(0)
+def final(num):
+    look_up = {}
+    for f in range(num):
+        look_up[f] = 0
     print look_up
-        
-"""def euler5(num):
-    for i in range(num)
-        x = factor(num)"""
-        
+    for i in range(num):
+        #loop through num
+        arr = factor(i)
+        #factor i, return factor array
+        print "arr for "+str(i)+"is "+str(arr)
+        """for l in arr:
+            #loop thru factor array
+            store = arr.count(l)
+            if look_up[l] <= store:
+                look_up[l] = store"""
