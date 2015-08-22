@@ -11,27 +11,38 @@ def factor(x):
     factors = []
     store = x
     while store > 1:
-        for i in range(2,x):
-            if store%i == 0 and isPrime(i):
-                if not(i == 1):    
-                    factors.append(i)
-                    store /= i
+        if isPrime(store):
+            factors.append(store)
+            store = 0
+        elif not isPrime(store):
+            for i in range(2,x):
+                if store%i == 0 and isPrime(i) and not(i == 1):    
+                        factors.append(i)
+                        store /= i
         if store == 1:
             store = 0
     factors.sort()
     return factors
-def final(num):
+def almost(num):
     look_up = {}
-    for f in range(num):
-        look_up[f] = 0
-    print look_up
-    for i in range(num):
+    final = 1
+    for f in range(2,num+1):
+        if isPrime(f):
+            look_up[f] = 0
+    for i in range(2,num+1):
         #loop through num
         arr = factor(i)
         #factor i, return factor array
-        print "arr for "+str(i)+"is "+str(arr)
-        """for l in arr:
+        for l in arr:
             #loop thru factor array
             store = arr.count(l)
             if look_up[l] <= store:
-                look_up[l] = store"""
+                look_up[l] = store
+    primekeys = look_up.keys()
+    for j in primekeys:
+        temp = look_up[j]
+        t = j**temp
+        final *= t
+    return final
+    
+print almost(20)
