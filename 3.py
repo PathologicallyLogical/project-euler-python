@@ -33,6 +33,10 @@ def primes(x):
 	final = primes(x)
 	print final[len(final)-1]
 	return final[len(final)-1]
-	
+
+#started/completed August 2015	
 """
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
 """
