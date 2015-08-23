@@ -1,0 +1,14 @@
+def sumOfSquares(x):
+    count = 0
+    for i in range(x+1):
+        count += i**2
+    return count
+def squareOfSums(y):
+    c = 0
+    for i in range(y+1):
+        c += i
+    return c**2
+def final(z):
+    return squareOfSums(z)-sumOfSquares(z)
+    
+final(100)
